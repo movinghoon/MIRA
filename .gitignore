@@ -149,10 +149,10 @@ cython_debug/
 out
 gen
 
+# VScode
+.DS_Store
 
 # Personal
 *.pth
 *.pth.tar
 wandb
-100ep
-400ep
