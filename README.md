@@ -4,8 +4,6 @@ Official PyTorch implementation of \
 Dong Hoon Lee, Sungik Choi, Hyunwoo Kim, Sae-Young Chung \
 NeurIPS 2022
 
-We are planning to release the pre-trained weights soon.
-
 ## Requirements
 - `torch==1.11.0`
 - `torchvision==0.12.0`
@@ -35,11 +33,13 @@ python -m torch.distributed.launch --nproc_per_node=16 eval_semi.py $MODEL --dat
 ```
 python -m torch.distributed.launch --nproc_per_node=16 eval_knn.py $MODEL --label-perc $LABEL_PERC --data-dir $DATA_DIR
 ```
-
-## Pretrained weights on ImageNet-1k
-We will release the pretrained weights soon.
 -->
 
+## Pretrained weights on ImageNet-1k
+| method | arch | batch-size | epochs | multi-crop | linear eval | download | script |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| MIRA | ResNet-50 | 4096 | 800 | 2x224 | 74.1 | [mira-800ep.pth.tar](https://www.dropbox.com/s/m5nepxvp4dkh8bo/mira-800ep.pth.tar?dl=0) | [script](https://www.dropbox.com/s/u5kgrwnj4gfaww8/mira_800ep_pretrain.sh?dl=0) |
+| MIRA | ResNet-50 | 4096 | 400 | 2x224 + 6x96 | 75.6 | [mira-mc-400ep.pth.tar](https://www.dropbox.com/s/vygli69xu6x4vlo/mira-mc-400ep.pth.tar?dl=0) | [script](https://www.dropbox.com/s/y02dqc8j9rpe2d0/mira_mc_400ep_pretrain.sh?dl=0) |
 
 ## Acknowledgement
 Our implementation uses code from the following repositories: [DINO](https://github.com/facebookresearch/dino), [SwAV](https://github.com/facebookresearch/swav) [MoCo-v3](https://github.com/facebookresearch/moco-v3), [VISSL](https://github.com/facebookresearch/vissl), and [solo-learn](https://github.com/vturrisi/solo-learn)
